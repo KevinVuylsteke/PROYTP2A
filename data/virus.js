@@ -1,9 +1,11 @@
 const fetch = require('node-fetch');
+const dotenv = require('dotenv').config();
+console.log(process.env.XRAPIAPIKEY);
 
 async function getTotals(){
     const options = {
         headers: {
-            "x-rapidapi-key": "97b813e2bcmsha53207007bed6f1p165ad8jsn0179f34668f3"
+            "x-rapidapi-key": process.env.XRAPIAPIKEY
         }
     };
     let data = await fetch("https://covid-19-data.p.rapidapi.com/totals?format=json", options);

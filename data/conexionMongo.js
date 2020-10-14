@@ -1,7 +1,8 @@
 const chalk = require('chalk');
 const mongoclient = require('mongodb').MongoClient;
+const dotenv = require('dotenv').config();
 
-const uriMongodb = 'mongodb+srv://admin:tp2a@cluster0.uak9i.mongodb.net/sample_betp2?retryWrites=true&w=majority';
+const uriMongodb = process.env.URIMONGO;
 
 const client = new mongoclient(uriMongodb, {useUnifiedTopology: true, useNewUrlParser: true});
 
